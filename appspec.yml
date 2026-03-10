@@ -2,14 +2,10 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/flaskBlog
+    destination: /home/ubuntu/flask-python
+    overwrite: true
 hooks:
-  BeforeInstall:
-    - location: scripts/install_docker_compose.sh
+  AfterInstall:
+    - location: scripts/restart.sh
       timeout: 300
       runas: root
-  ApplicationStart:
-    - location: scripts/start_docker_compose.sh
-      timeout: 300
-      runas: root
-
