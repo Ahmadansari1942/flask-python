@@ -4,6 +4,14 @@ files:
   - source: /
     destination: /home/ubuntu/flask-python
     overwrite: true
+permissions:
+  - object: /home/ubuntu/flask-python
+    owner: ubuntu
+    group: ubuntu
+    mode: 755
+    type:
+      - directory
+      - file
 hooks:
   AfterInstall:
     - location: scripts/restart.sh
